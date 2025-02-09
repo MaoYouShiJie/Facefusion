@@ -80,18 +80,6 @@ def analyse_frame(vision_frame : VisionFrame) -> bool:
 	return probability > PROBABILITY_LIMIT
 
 
-def forward(vision_frame : VisionFrame) -> float:
-	content_analyser = get_inference_pool().get('content_analyser')
-
-	with conditional_thread_semaphore():
-		probability = content_analyser.run(None,
-		{
-			'input': vision_frame
-		})[0][0][1]
-
-	return probability
-
-
 def forward(vision_frame: VisionFrame) -> float:
     # NSFW 检测已禁用，固定返回低概率（0.0），确保检测结果为 False
     # 原来的检测代码已被注释掉：
@@ -101,6 +89,15 @@ def forward(vision_frame: VisionFrame) -> float:
     # return probability
     return 0.0
 
+
+
+def prepare_frame(vision_frame : VisionFrame) -> VisionFrame:
+	model_size = get_model_options().get('size')
+	model_mean = get_model_options().get('mean')
+	vision_frame = cv2.resize(vision_frame, model_size).astype(numpy.float32)
+	vision_frame -= numpy.array(model_mean).astype(numpy.float32)
+	vision_frame = numpy.expand_dims(vision_frame, axis = 0)
+	return vision_frame
 
 
 @lru_cache(maxsize = None)
