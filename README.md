@@ -1,29 +1,29 @@
 FaceFusion
 ==========
 
-> Industry leading face manipulation platform.
+> 行业领先的人脸处理平台.
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/facefusion/facefusion/ci.yml.svg?branch=master)](https://github.com/facefusion/facefusion/actions?query=workflow:ci)
 [![Coverage Status](https://img.shields.io/coveralls/facefusion/facefusion.svg)](https://coveralls.io/r/facefusion/facefusion)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
-Preview
+预览
 -------
 
 ![Preview](https://raw.githubusercontent.com/facefusion/facefusion/master/.github/preview.png?sanitize=true)
 
 
-Installation
+安装
 ------------
 
-Be aware, the [installation](https://docs.facefusion.io/installation) needs technical skills and is not recommended for beginners. In case you are not comfortable using a terminal, our [Windows Installer](http://windows-installer.facefusion.io) and [macOS Installer](http://macos-installer.facefusion.io) get you started.
+注意, [installation](https://docs.facefusion.io/installation) 需要技术技能，不建议初学者. 如果您不习惯使用终端，从我们的 [Windows Installer](http://windows-installer.facefusion.io) 和 [macOS Installer](http://macos-installer.facefusion.io) 开始吧.
 
 
-Usage
+用法
 -----
 
-Run the command:
+运行命令:
 
 ```
 python facefusion.py [commands] [options]
@@ -54,7 +54,7 @@ commands:
 ```
 
 
-Documentation
+文档
 -------------
 
-Read the [documentation](https://docs.facefusion.io) for a deep dive.
+阅读它 [documentation](https://docs.facefusion.io) 了解更多.
