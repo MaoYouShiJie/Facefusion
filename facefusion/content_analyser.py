@@ -81,12 +81,14 @@ def analyse_frame(vision_frame : VisionFrame) -> bool:
 
 
 def forward(vision_frame: VisionFrame) -> float:
+	
     # NSFW 检测已禁用，固定返回低概率（0.0），确保检测结果为 False
     # 原来的检测代码已被注释掉：
     # content_analyser = get_inference_pool().get('content_analyser')
     # with conditional_thread_semaphore():
     #     probability = content_analyser.run(None, {'input': vision_frame})[0][0][1]
     # return probability
+	
     return 0.0
 
 
